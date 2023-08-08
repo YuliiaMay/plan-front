@@ -15,19 +15,17 @@ import HaveDoneGallery from "./components/Planner/HaveDoneGallery";
 import AllTasksGallery from "./components/Planner/AllTasksGallery";
 
 
+// interface AppProps { };
 
 
-
-interface AppProps { };
-
-const App: FC<AppProps> = () => {
+const App = () => {
   return (
     <>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
             <Route index element={<HomePage />} />
 
-            <Route path="/:userName" element={<AccSettingsPage />} />
+            
             
             <Route path="/planner" element={<PlannerPage />}>
               <Route path="to-do" element={<ToDoGallery />} />
@@ -39,7 +37,8 @@ const App: FC<AppProps> = () => {
             <Route path="/planner/:taskId" element={<TaskDetailsPage />} />
           
             <Route path="/register" element={<RegisterPage />} />
-            <Route path="/login" element={<LoginPage />}/>
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/:userName" element={<AccSettingsPage />} />
         </Route>
       </Routes>
     </>
