@@ -1,4 +1,4 @@
-import { FC } from "react";
+
 import { Routes, Route } from "react-router-dom";
 import {
   RegisterPage,
@@ -13,14 +13,15 @@ import ToDoGallery from "./components/Planner/ToDoGallery";
 import InProgressGallery from "./components/Planner/InProgressGallery";
 import HaveDoneGallery from "./components/Planner/HaveDoneGallery";
 import AllTasksGallery from "./components/Planner/AllTasksGallery";
-
+import { ThemeProvider } from "styled-components";
+import {theme} from "./assets/styles"
 
 // interface AppProps { };
 
 
 const App = () => {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
             <Route index element={<HomePage />} />
@@ -41,7 +42,7 @@ const App = () => {
             <Route path="/:userName" element={<AccSettingsPage />} />
         </Route>
       </Routes>
-    </>
+    </ThemeProvider>
   )
 }
 
