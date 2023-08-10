@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
     body {
-        font-family: 'Manrope', sans-serif;
+        font-family: 'RobotoFlex';
         font-weight: 400;
         font-size: 16px;
         background-color: #F3F3F3;

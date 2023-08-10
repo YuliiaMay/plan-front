@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 
 export const Logo = styled.span`
-    font-family: Walter Turncoat;
-    font-size: 48px;
+    font-family: "Barriecito";
+    font-size: 32px;
     color: #2B2B2B;
     margin-right: 30px;
 `;
