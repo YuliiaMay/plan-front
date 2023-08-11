@@ -7,19 +7,15 @@ import { BrowserRouter } from 'react-router-dom';
 import { store, persistor } from './store/store.ts';
 import { PersistGate } from 'redux-persist/integration/react';
 
-// import { FontStyles } from './assets/fonts/FontStyles.ts';
-import { GlobalStyles } from './assets/styles/GlobalStyles.ts';
+import { GlobalStyles } from './assets/styles';
 
-// import FontStyles from "./assets/styles/FontStyles.js"
-
-// import './assets/fonts/Barriecito/Barriecito-Regular.ttf';
 
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <Provider store={store}>
     <React.StrictMode>
       <GlobalStyles />
-      {/* <FontStyles /> */}
+
       <BrowserRouter basename="/plan-front">
         <PersistGate persistor={persistor}>
           <App />
