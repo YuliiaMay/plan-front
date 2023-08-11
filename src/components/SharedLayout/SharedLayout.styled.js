@@ -24,14 +24,14 @@ export const HeaderBase = styled.div`
 `;
 
 export const Logo = styled.span`
-    font-family: Walter Turncoat;
+    // font-family: Walter Turncoat;
     font-size: 48px;
     color: #2B2B2B;
     margin-right: 30px;
 `;
 
 export const Message = styled.span`
-    font-family: Walter Turncoat;
+    // font-family: Walter Turncoat;
     font-size: 48px;
     color: #4113A4;
 
@@ -57,7 +57,7 @@ export const UserIcon = styled.div`
 `;
 
 export const UserName = styled.p`
-    font-family: Walter Turncoat;
+    // font-family: Walter Turncoat;
     font-size: 18px;
     
     color: #2B2B2B;
@@ -73,7 +73,7 @@ export const UserName = styled.p`
 
 export const StyledLink = styled(NavLink)`
     text-decoration: none;
-    font-family: Walter Turncoat;
+    // font-family: Walter Turncoat;
     font-size: 18px;
     color: #2B2B2B;
 

@@ -1,12 +1,13 @@
 import { createGlobalStyle } from "styled-components";
 
-export const GlobalStyle = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
+
     body {
-        font-family: 'Manrope', sans-serif;
+        font-family: 'Barriecito';
         font-weight: 400;
         font-size: 16px;
         background-color: #F3F3F3;
-        color: #111111;
+        color: #555555;
         margin: 0;
     };
 
