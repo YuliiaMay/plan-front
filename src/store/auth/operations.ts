@@ -3,11 +3,11 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 
 axios.defaults.baseURL = "https://plan-back.onrender.com";
 
-const setAuthHeader = token => {
+const setAuthHeader = (token: string) => {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
-const clearAuthHeader = token => {
+const clearAuthHeader = () => {
     axios.defaults.headers.common.Authorization = '';
 };
 
@@ -25,7 +25,7 @@ export const register = createAsyncThunk(
             );
             setAuthHeader(response.data.token);
             return response.data;
-        } catch (error) {
+        } catch (error: any) {
             return thunkAPI.rejectWithValue(error.message);
         }
     }
@@ -45,7 +45,7 @@ export const login = createAsyncThunk(
             );
             setAuthHeader(response.data.token);
             return response.data;
-        } catch (error) {
+        } catch (error: any) {
             return thunkAPI.rejectWithValue(error.message);
         }
     }
@@ -62,9 +62,9 @@ export const logout = createAsyncThunk(
             const response = await axios.post(
                 '/users/logout'
             );
-            // clearAuthHeader();
+            clearAuthHeader();
             return response.data;
-        } catch (error) {
+        } catch (error: any) {
             return thunkAPI.rejectWithValue(error.message);
         }
     }
@@ -90,7 +90,7 @@ export const refreshUser = createAsyncThunk(
                 '/users/current'
             );
             return response.data;
-        } catch (error) {
+        } catch (error: any) {
             return thunkAPI.rejectWithValue(error.message);
         }
     }

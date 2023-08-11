@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import {  Outlet } from "react-router-dom";
-import Header from "../Header/Header.jsx"
+import Header from "../Header/Header.js"
 import { ResponsiveContainer } from "../../assets/styles/ResponsiveContainer.js";
 
 
