@@ -14,14 +14,14 @@ import InProgressGallery from "./components/Planner/InProgressGallery";
 import HaveDoneGallery from "./components/Planner/HaveDoneGallery";
 import AllTasksGallery from "./components/Planner/AllTasksGallery";
 import { ThemeProvider } from "styled-components";
-import {theme} from "./assets/styles"
+// import {theme} from "./assets/styles"
 
 // interface AppProps { };
 
 
 const App = () => {
   return (
-    <ThemeProvider theme={theme}>
+    // <ThemeProvider>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
             <Route index element={<HomePage />} />
@@ -42,7 +42,7 @@ const App = () => {
             <Route path="/:userName" element={<AccSettingsPage />} />
         </Route>
       </Routes>
-    </ThemeProvider>
+    // </ThemeProvider>
   )
 }
 
