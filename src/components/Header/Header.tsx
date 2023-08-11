@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { selectIsLoggedIn, selectUser } from "../../store/auth/selectors";
-import { HeaderWrapper, Logo, Message, AccLink, UserIcon, UserName, AuthLink, StyledLink, HeaderNav } from "./Header.styled";
+import { HeaderWrapper, Logo } from "./Header.styled";
 // import { TbUserCircle } from "react-icons/tb";
 import { GiHamburgerMenu } from "react-icons/gi";
 
