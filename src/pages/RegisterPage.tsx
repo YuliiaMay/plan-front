@@ -1,7 +1,8 @@
 const RegisterPage = () => {
     return (
-        <div></div>
+        <div>Register</div>
     );
 }
+
 
 export default RegisterPage;
