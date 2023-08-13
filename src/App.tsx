@@ -1,5 +1,5 @@
 
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import {
   RegisterPage,
   LoginPage,
@@ -40,6 +40,7 @@ const App = () => {
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/:userName" element={<AccSettingsPage />} />
+            <Route path="/logout" element={<Navigate to="/login" />} />
         </Route>
       </Routes>
     </ThemeProvider>

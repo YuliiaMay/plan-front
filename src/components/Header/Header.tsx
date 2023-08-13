@@ -3,17 +3,37 @@ import { selectIsLoggedIn, selectUser } from "../../store/auth/selectors";
 import { HeaderWrapper, Logo } from "./Header.styled";
 // import { TbUserCircle } from "react-icons/tb";
 import { GiHamburgerMenu } from "react-icons/gi";
+import UserNav from "./UserNav/UserNav";
+import AuthNav from "./AuthNav/AuthNav";
+import Burger from "./Burger/Burger";
+import { useState } from 'react';
+
+
 
 const Header = () => {
-    const isLoggedIn = useSelector(selectIsLoggedIn);
-    const user = useSelector(selectUser);
-    console.log(isLoggedIn);
-    console.log(user);
+    const isLoggedIn: boolean = useSelector(selectIsLoggedIn);
+    // const user = useSelector(selectUser);
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
 
     return (
         <HeaderWrapper>
             <Logo>Plan!</Logo>
+            
             {/* <Message>Get what you want!</Message> */}
+
+            {
+                isLoggedIn
+                    ? <UserNav />
+                    : <AuthNav />
+            }
+
+            {
+                isOpen && <Burger toggleMenu={toggleMenu} />
+            }
 
             <div>
                 {
