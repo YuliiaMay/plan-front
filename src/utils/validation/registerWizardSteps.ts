@@ -1,35 +1,42 @@
-import { object, string, number } from "yup";
+import { object, string, number, boolean } from "yup";
 import BasicStep from "../../components/Forms/RegisterForm/BasicStep/BasicStep";
 import EmailStep from "../../components/Forms/RegisterForm/EmailStep/EmailStep";
-// import MarketingStep from "../../components/Forms/RegisterForm/MarketingStep/MarketingStep";
-// import UsageStep from "../../components/Forms/RegisterForm/UsageStep/UsageStep";
+import UsageStep from "../../components/Forms/RegisterForm/UsageStep/UsageStep";
+import MarketingStep from "../../components/Forms/RegisterForm/MarketingStep/MarketingStep";
 
 
-interface Step {
+
+type Step = {
     id: string,
     component: any,
     initialValues: {
         sex?: string,
+        age?: number | null,
         name?: string,
         password?: string,
         email?: string,
-        isSubscribe?: boolean
+        isSubscribe?: boolean,
+        usage?: string,
+        source?: string,
+        experience?: boolean
     },
     validationSchema: any,
     actionLabel: string,
 }
 
-const steps: Array<Step> = [
+const steps: Step[] = [
     {
         id: "basic",
         component: BasicStep,
         initialValues: {
             sex: "",
+            age: null,
             name: "",
             password: "",
         },
         validationSchema: object().shape({
-            sex: string().required("The sex field is required"),
+            sex: string(),
+            age: number(),
             name: string().required("Name field is required"),
             password: string().required("Password is required"),
         }),
@@ -43,11 +50,35 @@ const steps: Array<Step> = [
             isSubscribe: false,
         },
         validationSchema: object().shape({
-            // email: string().required("The sex field is required"),
-            // isSubscribe: boolean(),
+            email: string().email().required("Email is required"),
+            isSubscribe: boolean(),
         }),
         actionLabel: "Continue",        
-    }    
+    },    
+    {
+        id: "usage",
+        component: UsageStep,
+        initialValues: {
+            usage: "",
+        },
+        validationSchema: object().shape({
+            usage: string().required("This point is required"),
+        }),
+        actionLabel: "Continue",        
+    },      
+    {
+        id: "marketing",
+        component: MarketingStep,
+        initialValues: {
+            source: "",
+            experience: false
+        },
+        validationSchema: object().shape({
+            source: string().required("This point is required"),
+            experience: string(),
+        }),
+        actionLabel: "Submit",        
+    }     
 ];
 
 export default steps;

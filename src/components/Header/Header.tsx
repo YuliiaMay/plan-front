@@ -15,7 +15,7 @@ const Header = () => {
     // const user = useSelector(selectUser);
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
-    const toggleMenu = () => {
+    const toggleMenu = (): void => {
         setIsOpen(!isOpen);
     };
 
