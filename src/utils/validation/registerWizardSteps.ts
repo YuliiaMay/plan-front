@@ -3,28 +3,10 @@ import BasicStep from "../../components/Forms/RegisterForm/BasicStep/BasicStep";
 import EmailStep from "../../components/Forms/RegisterForm/EmailStep/EmailStep";
 import UsageStep from "../../components/Forms/RegisterForm/UsageStep/UsageStep";
 import MarketingStep from "../../components/Forms/RegisterForm/MarketingStep/MarketingStep";
+import { RegisterData } from "../types";
 
 
-
-type Step = {
-    id: string,
-    component: any,
-    initialValues: {
-        sex?: string,
-        age?: number | null,
-        name?: string,
-        password?: string,
-        email?: string,
-        isSubscribe?: boolean,
-        usage?: string,
-        source?: string,
-        experience?: boolean
-    },
-    validationSchema: any,
-    actionLabel: string,
-}
-
-const steps: Step[] = [
+const steps: RegisterData[] = [
     {
         id: "basic",
         component: BasicStep,
