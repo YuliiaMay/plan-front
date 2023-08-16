@@ -10,7 +10,7 @@ export const RegisterForm = () => {
     const handleSubmit = useCallback((values: RegisterData): void => {
         console.log("full values:", values);
     }, []);
-    
+
     return (
         <div>
             <FormikWizard

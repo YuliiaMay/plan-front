@@ -5,8 +5,8 @@ type NavProps = {
     wizard?: any   
 }
 
-const checkProperties = (obj: {}): void => {
-    for (let key in obj) {
+const checkProperties = (obj: any): boolean => {
+    for (const key in obj) {
         if (obj[key] !== null && obj[key] !== "") return false;
     }
     return true;
